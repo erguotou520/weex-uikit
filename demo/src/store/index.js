@@ -1,8 +1,23 @@
 import Vuex from 'vuex'
 Vue.use(Vuex)
 const store = new Vuex.Store({
-  strict: process.env.NODE_ENV !== 'production',
-  modules: {
+  state: {
+    title: 'weex-uikit'
+  },
+  mutations: {
+    SET_TITLE (state, title) {
+      state.title = title
+    }
+  },
+  actions: {
+    setTitle ({ commit }, title) {
+      commit('SET_TITLE', title)
+    }
+  },
+  getters: {
+    title (state) {
+      return state.title
+    }
   }
 })
 

@@ -6,6 +6,8 @@ import UH5 from 'packages/text/H5'
 import UH6 from 'packages/text/H6'
 import UH7 from 'packages/text/H7'
 import UButton from 'packages/button/Button'
+import UHeader from 'packages/header/Header'
+import URadio from 'packages/form/Radio'
 
 Vue.component(UH1.name, UH1)
 Vue.component(UH2.name, UH2)
@@ -15,3 +17,5 @@ Vue.component(UH5.name, UH5)
 Vue.component(UH6.name, UH6)
 Vue.component(UH7.name, UH7)
 Vue.component(UButton.name, UButton)
+Vue.component(UHeader.name, UHeader)
+Vue.component(URadio.name, URadio)

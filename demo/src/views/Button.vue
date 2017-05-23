@@ -3,7 +3,9 @@
     <u-button class="button-item" @click="toast">primary</u-button>
     <u-button class="button-item" disabled>primary disabled</u-button>
     <u-button class="button-item" type="highlight">highlight</u-button>
+    <u-button class="button-item" type="highlight" disabled>highlight disabled</u-button>
     <u-button class="button-item" type="minor">minor</u-button>
+    <u-button class="button-item" type="minor" disabled>minor disabled</u-button>
   </div>
 </template>
 <script>
