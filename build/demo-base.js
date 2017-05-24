@@ -56,11 +56,6 @@ module.exports = function getBaseConfig (loader, isDev) {
         'process.env': {
           IP: JSON.stringify(require('ip').address())
         }
-      }),
-      new HtmlWebpackPlugin({
-        filename: 'qrcode.html',
-        template: 'demo/qrcode.tpl',
-        chunks: []
       })
     ] : [])
     .concat(loader === 'vue' ? [
