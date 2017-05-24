@@ -1,5 +1,5 @@
 <template>
-  <div @click="change" style="flex-direction:row;align-items:center;">
+  <div class="radio" @click="change">
     <div class="icon" :class="clz"></div>
     <text v-if="$slots.default" class="text" :class="[disabled?'text-disabled':'']"><slot></slot></text>
   </div>
@@ -8,8 +8,8 @@
 export default {
   name: 'u-radio',
   props: {
-    value: [String, Number, Object, Array],
-    val: [String, Number, Object, Array],
+    value: [String, Number, Boolean, Object, Array],
+    val: [String, Number, Boolean, Object, Array],
     disabled: {
       type: Boolean,
       default: false
@@ -23,7 +23,7 @@ export default {
         result.push('checked')
       }
       if (this.disabled) {
-        result.push(checked ? 'checked-disabled' : 'disabled')
+        result.push('disabled')
       }
       return result
     }
@@ -40,6 +40,9 @@ export default {
 </script>
 <style lang="stylus" scoped>
 @import "../theme-default/var.styl"
+.radio
+  flex-direction row
+  align-items center
 .icon
   width 38px
   height @width
@@ -52,12 +55,10 @@ export default {
   border-width 12px
   border-color $color-primary
 .disabled
-  border-color $color-text-disable
-.checked-disabled
-  border-color $color-text-disable
+  border-color $color-disabled
 .text
   color $color-text-primary
   margin-left 40px
 .text-disabled
-  color $color-text-disable
+  color $color-text-disabled
 </style>

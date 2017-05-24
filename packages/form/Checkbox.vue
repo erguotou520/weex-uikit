@@ -1,8 +1,8 @@
 <template>
   <div class="checkbox" @click="change">
-    <text class="box" :class="[checked ? 'checked-box' : '', disabled ? 'disabled-box' : '']"></text>
-    <text v-if="checked" class="icon" :class="[disabled ? 'disabled-icon' : '']"></text>
-    <text v-if="$slots.default" class="text" :class="[disabled ? 'disabled-text' : '']"><slot></slot></text>
+    <text class="box" :class="[checked ? 'box-checked' : '', disabled ? 'box-disabled' : '']"></text>
+    <text v-if="checked" class="icon" :class="[disabled ? 'icon-disabled' : '']"></text>
+    <text v-if="$slots.default" class="text" :class="[disabled ? 'text-disabled' : '']"><slot></slot></text>
   </div>
 </template>
 <script>
@@ -10,7 +10,7 @@ export default {
   name: 'u-checkbox',
   props: {
     value: [Array],
-    val: [String, Number, Object, Array],
+    val: [String, Number, Boolean, Object, Array],
     disabled: {
       type: Boolean,
       default: false
@@ -50,10 +50,10 @@ export default {
   border-width 2px
   border-color $color-text-primary
   border-radius 10px
-.checked-box
+.box-checked
   border-color $color-primary
-.disabled-box
-  border-color $color-text-disable
+.box-disabled
+  border-color $color-disabled
 .icon
   position absolute
   left 8px
@@ -68,12 +68,12 @@ export default {
   border-bottom-color $color-primary
   border-radius 2px
   transform rotate(-45deg)
-.disabled-icon
-  border-left-color $color-text-disable
-  border-bottom-color $color-text-disable
+.icon-disabled
+  border-left-color $color-disabled
+  border-bottom-color $color-disabled
 .text
   margin-left 40px
   color $color-text-primary
-.disabled-text
-  color $color-text-disable
+.text-disabled
+  color $color-text-disabled
 </style>

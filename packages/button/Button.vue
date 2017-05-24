@@ -47,11 +47,23 @@ export default {
   background-color $color-highlight
 .btn-tp-minor
   background-color $color-btn-minor
+.btn-tp-primary:active
+  background-color darken($color-primary, 10%)
+.btn-tp-highlight:active
+  background-color darken($color-highlight, 10%)
+.btn-tp-minor:active
+  background-color darken($color-btn-minor, 10%)
 .btn-tpd-primary
   background-color rgba($color-primary, 0.52)
 .btn-tpd-highlight
   background-color rgba($color-highlight, 0.52)
 .btn-tpd-minor
+  background-color rgba($color-btn-minor, 0.52)
+.btn-tpd-primary:active
+  background-color rgba($color-primary, 0.52)
+.btn-tpd-highlight:active
+  background-color rgba($color-highlight, 0.52)
+.btn-tpd-minor:active
   background-color rgba($color-btn-minor, 0.52)
 .btn-text-primary
   color #fff

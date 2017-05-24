@@ -6,9 +6,9 @@
         style="font-family:'iconfont';color:#fff;font-size:34px;">&#xe60c;</text>
       {{$store.getters.title}}
     </u-header>
-    <div style="flex:1;overflow:auto">
+    <scroller style="flex:1;">
       <router-view></router-view>
-    </div>
+    </scroller>
   </div>
 </template>
 <script>
