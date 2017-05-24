@@ -10,6 +10,7 @@ import UHeader from 'packages/header/Header'
 import URadio from 'packages/form/Radio'
 import UCheckbox from 'packages/form/Checkbox'
 import USwitch from 'packages/form/Switch'
+import UInput from 'packages/form/Input'
 
 Vue.component(UH1.name, UH1)
 Vue.component(UH2.name, UH2)
@@ -23,3 +24,4 @@ Vue.component(UHeader.name, UHeader)
 Vue.component(URadio.name, URadio)
 Vue.component(UCheckbox.name, UCheckbox)
 Vue.component(USwitch.name, USwitch)
+Vue.component(UInput.name, UInput)

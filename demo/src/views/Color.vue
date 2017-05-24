@@ -37,7 +37,7 @@
 .t-text-minor
   background-color $color-text-minor
 .t-text-disable
-  background-color $color-text-disable
+  background-color $color-text-disabled
   color $color-text-primary
 .t-background
   background-color $color-background
