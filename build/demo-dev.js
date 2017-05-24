@@ -19,7 +19,6 @@ webConfig.plugins.push(new webpack.HotModuleReplacementPlugin())
 weexConfig.entry = {
   app: ['./demo/src/app.js']
 }
-console.log(weexConfig)
 new DevServer(webpack([webConfig, weexConfig]), {
   port: port,
   host: '0.0.0.0',

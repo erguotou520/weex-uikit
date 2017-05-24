@@ -8,8 +8,8 @@
 export default {
   name: 'u-radio',
   model: {
-    prop: 'u-checked',
-    event: 'change'
+    prop: 'checked',
+    event: 'u-change'
   },
   props: {
     checked: [String, Number, Object],
