@@ -19,7 +19,7 @@ export default {
   created () {
     domModule.addRule('fontFace', {
       'fontFamily': 'inputfont',
-      'src': "url('http://at.alicdn.com/t/font_1uf08qmz45tgldi.ttf')"
+      'src': "url('//at.alicdn.com/t/font_1uf08qmz45tgldi.ttf')"
     })
   }
 }

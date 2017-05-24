@@ -10,7 +10,6 @@ install:
 script:
   - npm run demo:build
   - cd demo/dist
-  - rm -f app.weex.js
   - git init
   - git add -A
   - git commit -m "Auto commit"
