@@ -1,16 +1,15 @@
 <template>
-  <div @click="change" style="flex-direction:row">
+  <div @click="change" style="flex-direction:row;align-items:center;">
     <div class="icon" :class="clz"></div>
     <text v-if="$slots.default" class="text" :class="[disabled?'text-disabled':'']"><slot></slot></text>
   </div>
 </template>
 <script>
-const modal = weex.requireModule('modal')
 export default {
   name: 'u-radio',
   props: {
-    value: [String, Number, Object],
-    val: [String, Number, Object],
+    value: [String, Number, Object, Array],
+    val: [String, Number, Object, Array],
     disabled: {
       type: Boolean,
       default: false
@@ -19,10 +18,6 @@ export default {
   computed: {
     clz () {
       const result = []
-      modal.toast({
-        message: this.val + ',' + this.value,
-        duration: 1
-      })
       const checked = this.val === this.value
       if (checked) {
         result.push('checked')
@@ -52,7 +47,7 @@ export default {
   border-radius 20px
   border-style solid
   border-width 2px
-  border-color $color-text-minor
+  border-color $color-text-primary
 .checked
   border-width 12px
   border-color $color-primary

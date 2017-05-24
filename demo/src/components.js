@@ -8,6 +8,7 @@ import UH7 from 'packages/text/H7'
 import UButton from 'packages/button/Button'
 import UHeader from 'packages/header/Header'
 import URadio from 'packages/form/Radio'
+import UCheckbox from 'packages/form/Checkbox'
 
 Vue.component(UH1.name, UH1)
 Vue.component(UH2.name, UH2)
@@ -19,3 +20,4 @@ Vue.component(UH7.name, UH7)
 Vue.component(UButton.name, UButton)
 Vue.component(UHeader.name, UHeader)
 Vue.component(URadio.name, URadio)
+Vue.component(UCheckbox.name, UCheckbox)

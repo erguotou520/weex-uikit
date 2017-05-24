@@ -4,6 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = function getBaseConfig (loader, isDev) {
   return {
+    devtool: isDev ? '#cheap-module-eval-source-map' : '',
     output: {
       path: resolve(__dirname, '../demo/dist'),
       filename: '[name].' + (loader === 'vue' ? 'web' : loader) + '.js'

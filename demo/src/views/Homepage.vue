@@ -7,7 +7,7 @@
     </div>
     <div class="grid-row">
       <div class="grid-cell" @click="jump('/radio')"><text>单选</text></div>
-      <div class="grid-cell" @click="jump('/')"><text></text></div>
+      <div class="grid-cell" @click="jump('/checkbox')"><text>多选</text></div>
       <div class="grid-cell" @click="jump('/')"><text></text></div>
     </div>
   </div>
