@@ -17,14 +17,19 @@
   }
   #qr {
     max-width: 320px;
-    margin: 10px auto 20px;
+    margin: 10px auto 2px;
     display: none;
+  }
+  #link {
+    margin: 2px auto 10px;
+    text-align: center;
   }
   </style>
 </head>
 <body>
   <p class="tip">用playground扫码打开</p>
   <img id="qr" src="" alt="qrcode">
+  <a id="link" href=""></a>
   <div id="root"></div>
 </body>
 <script src="//unpkg.com/jr-qrcode"></script>
@@ -40,6 +45,8 @@
     var code = jrQrcode.getQrBase64(link);
     document.getElementById('qr').src = code;
     document.getElementById('qr').style.display = 'block'
+    document.getElementById('link').setAttribute('href', link)
+    document.getElementById('link').textContent = link
     document.getElementsByClassName('tip')[0].style.display = 'block'
   }
 </script>
