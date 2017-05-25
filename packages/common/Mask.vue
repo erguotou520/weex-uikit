@@ -1,11 +1,11 @@
 <template>
-  <div class="mask" @click="$emit('input', false)" :style="{height:height+'px'}"><slot></slot></div>
+  <div class="mask" :class="[show?'active':'']" :style="{height:height+'px'}"><slot></slot></div>
 </template>
 <script>
 export default {
   name: 'u-mask',
   props: {
-    value: {
+    show: {
       type: Boolean,
       default: false
     }
@@ -14,6 +14,9 @@ export default {
     return {
       height: weex.config.deviceHeight
     }
+  },
+  created () {
+    Vue.prototype.$uMask = this
   }
 }
 </script>
@@ -26,4 +29,11 @@ export default {
   bottom 0
   justify-content flex-end
   background-color rgba(0, 0, 0, .5)
+  z-index 10
+  opacity 0
+  transform translate(-750px)
+  transform translate(-100%)
+.active
+  opacity 1
+  transform translate(0)
 </style>
