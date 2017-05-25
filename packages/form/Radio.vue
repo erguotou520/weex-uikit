@@ -44,7 +44,7 @@ export default {
   flex-direction row
   align-items center
 .icon
-  width 38px
+  width 40px
   height @width
   background-color #fff
   border-radius 20px
@@ -52,7 +52,7 @@ export default {
   border-width 2px
   border-color $color-text-primary
 .checked
-  border-width 12px
+  border-width 16px
   border-color $color-primary
 .disabled
   border-color $color-disabled

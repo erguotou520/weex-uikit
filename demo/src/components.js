@@ -11,6 +11,8 @@ import URadio from 'packages/form/Radio'
 import UCheckbox from 'packages/form/Checkbox'
 import USwitch from 'packages/form/Switch'
 import UInput from 'packages/form/Input'
+import USelect from 'packages/form/Select'
+import UOption from 'packages/form/Option'
 
 Vue.component(UH1.name, UH1)
 Vue.component(UH2.name, UH2)
@@ -25,3 +27,5 @@ Vue.component(URadio.name, URadio)
 Vue.component(UCheckbox.name, UCheckbox)
 Vue.component(USwitch.name, USwitch)
 Vue.component(UInput.name, UInput)
+Vue.component(USelect.name, USelect)
+Vue.component(UOption.name, UOption)

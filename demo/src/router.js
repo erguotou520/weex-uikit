@@ -7,6 +7,8 @@ import Header from './views/Header'
 import Radio from './views/Radio'
 import Checkbox from './views/Checkbox'
 import Input from './views/Input'
+import Select from './views/Select'
+
 import store from './store'
 Vue.use(Router)
 
@@ -20,7 +22,8 @@ const router = new Router({
     { path: '/header', component: Header },
     { path: '/radio', component: Radio },
     { path: '/checkbox', component: Checkbox },
-    { path: '/input', component: Input }
+    { path: '/input', component: Input },
+    { path: '/select', component: Select }
   ]
 })
 
