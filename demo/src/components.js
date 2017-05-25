@@ -1,3 +1,5 @@
+import UMask from 'packages/common/Mask'
+import USelectPopup from 'packages/common/SelectPopup'
 import UH1 from 'packages/text/H1'
 import UH2 from 'packages/text/H2'
 import UH3 from 'packages/text/H3'
@@ -12,6 +14,8 @@ import UCheckbox from 'packages/form/Checkbox'
 import USwitch from 'packages/form/Switch'
 import UInput from 'packages/form/Input'
 
+Vue.component(UMask.name, UMask)
+Vue.component(USelectPopup.name, USelectPopup)
 Vue.component(UH1.name, UH1)
 Vue.component(UH2.name, UH2)
 Vue.component(UH4.name, UH4)

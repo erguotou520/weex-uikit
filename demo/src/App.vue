@@ -9,6 +9,9 @@
     <!-- <scroller style="flex:1;"> -->
       <router-view></router-view>
     <!-- </scroller> -->
+    <u-mask>
+      <u-select-popup></u-select-popup>
+    </u-mask>
   </div>
 </template>
 <script>
@@ -23,6 +26,13 @@ export default {
     domModule.addRule('fontFace', {
       'fontFamily': 'iconfont',
       'src': "url('//at.alicdn.com/t/font_0dgio1v15kz6ko6r.ttf')"
+    })
+  },
+  mounted () {
+    this.$nextTick(() => {
+      this.$selectPopup.showPopup([{ label: '男', value: 'male' }, { label: '女', value: 'female' }, { label: '其它', value: 'other' }], item => {
+        return this.$createElement('text', `我是${item.label}`)
+      })
     })
   }
 }
