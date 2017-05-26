@@ -1,31 +1,52 @@
 <script>
 export default {
   name: 'u-select-popup',
+  props: {
+    maskShow: {
+      type: Boolean,
+      required: true
+    }
+  },
   data () {
     const h = this.$createElement
     return {
+      selectComponent: null,
       options: [],
       renderFn: item => h('div', {
         staticClass: 'option',
         on: {
-          click () {
-            this.$emit('hide-mask')
-          }
-        }}, [
-          h('text', { staticClass: 'text', 'class': [item.selected ? 'text-active' : ''] }, item.label),
-          h('text', { staticClass: 'icon', 'class': [item.selected ? 'icon-active' : ''] })
+          click: function () {
+            if (!item.disabled) {
+              this.selectComponent.$emit('selected', item)
+              this.$emit('hide-mask')
+            }
+          }.bind(this)
+        },
+        'class': [item.disabled ? 'disabled' : ''] },
+        [
+          h('text', { staticClass: 'text', 'class': [item.selected ? 'text-active' : '', item.disabled ? 'text-disabled' : ''] }, item.label),
+          h('text', { staticClass: 'icon', 'class': [item.selected ? 'icon-active' : '', item.disabled ? 'icon-disabled' : ''] })
         ]
       )
     }
   },
+  watch: {
+    maskShow (val) {
+      if (this.selectComponent && !val && this.selectComponent.expanded) {
+        this.selectComponent.collapse()
+      }
+    }
+  },
   methods: {
-    showPopup (options, selectedValue, renderFn) {
+    showPopup (selectComp) {
+      this.selectComponent = selectComp
+      const options = selectComp.data.slice()
       options.forEach(opt => {
-        opt.selected = opt.value === selectedValue
+        opt.selected = opt.value === selectComp.value
       })
       this.options = options
       if (typeof renderFn === 'function') {
-        this.renderFn = renderFn
+        this.renderFn = selectComp.renderFn
       }
     }
   },

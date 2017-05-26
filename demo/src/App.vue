@@ -9,8 +9,8 @@
     <!-- <scroller style="flex:1;"> -->
       <router-view></router-view>
     <!-- </scroller> -->
-    <u-mask :show="$store.getters.maskVisiable">
-      <u-select-popup @hide-mask="$store.$dispatch('toggleMask', false)"></u-select-popup>
+    <u-mask :show="$store.getters.maskVisiable" @click="$store.dispatch('toggleMask', false)">
+      <u-select-popup :mask-show="$store.getters.maskVisiable" @hide-mask="$store.dispatch('toggleMask', false)"></u-select-popup>
     </u-mask>
   </div>
 </template>

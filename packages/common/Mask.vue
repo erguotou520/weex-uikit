@@ -1,5 +1,5 @@
 <template>
-  <div class="mask" :class="[show?'active':'']" :style="{height:height+'px'}"><slot></slot></div>
+  <div class="mask" :class="[show?'active':'']" @click="$emit('click', false)" :style="{height:height+'px'}"><slot></slot></div>
 </template>
 <script>
 export default {
