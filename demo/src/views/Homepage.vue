@@ -12,8 +12,8 @@
     </div>
     <div class="grid-row">
       <div class="grid-cell" @click="jump('/select')"><text>下拉</text></div>
-      <div class="grid-cell" @click="jump('/checkbox')"><text>多选</text></div>
-      <div class="grid-cell" @click="jump('/input')"><text>输入框</text></div>
+      <div class="grid-cell" @click="jump('/')"><text></text></div>
+      <div class="grid-cell" @click="jump('/')"><text></text></div>
     </div>
   </div>
 </template>

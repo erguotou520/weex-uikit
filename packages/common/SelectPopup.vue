@@ -13,7 +13,7 @@ export default {
       selectComponent: null,
       options: [],
       renderFn: item => h('div', {
-        staticClass: 'option',
+        attrs: { 'class': 'option' },
         on: {
           click: function () {
             if (!item.disabled) {
@@ -24,8 +24,8 @@ export default {
         },
         'class': [item.disabled ? 'disabled' : ''] },
         [
-          h('text', { staticClass: 'text', 'class': [item.selected ? 'text-active' : '', item.disabled ? 'text-disabled' : ''] }, item.label),
-          h('text', { staticClass: 'icon', 'class': [item.selected ? 'icon-active' : '', item.disabled ? 'icon-disabled' : ''] })
+          h('text', { attrs: { 'class': 'text' }, 'class': [item.selected ? 'text-active' : '', item.disabled ? 'text-disabled' : ''] }, item.label),
+          h('text', { attrs: { 'class': 'icon' }, 'class': [item.selected ? 'icon-active' : '', item.disabled ? 'icon-disabled' : ''] })
         ]
       )
     }
@@ -53,7 +53,7 @@ export default {
   render (h) {
     const $options = this.options.map(opt => this.renderFn.bind(this)(opt))
     return h('div', {
-      staticClass: 'popup'
+      attrs: { 'class': 'popup' }
     }, $options)
   },
   created () {
