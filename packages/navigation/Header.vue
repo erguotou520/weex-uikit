@@ -2,11 +2,13 @@
 <template>
   <div class="header" :class="['bg-' + type]" :style="bg?{'background-color':bg}:{}">
     <div class="left">
+      <text v-if="!$slots.left">&nbsp;</text>
       <slot name="left"></slot>
     </div>
     <text class="title"><slot></slot></text>
     <div class="right">
-      <slot name="right"></slot>
+      <text v-if="!$slots.right">&nbsp;</text>
+      <slot v-else name="right"></slot>
     </div>
   </div>
 </template>
@@ -33,8 +35,17 @@ export default {
   padding-right 20px
 .bg-primary
   background-color $color-primary
+.left
+  flex-direction row
+  flex 1
+.right
+  flex-direction row
+  justify-content flex-end
+  flex 1
 .title
+  flex 4
   color #fff
   font-size 34px
   font-weight 300
+  text-align center
 </style>

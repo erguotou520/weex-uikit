@@ -5,6 +5,8 @@
         @click="$router.history.go(-1)"
         style="font-family:'iconfont';color:#fff;font-size:34px;">&#xe60c;</text>
       {{$store.getters.title}}
+      <text slot="right" @click="copy"
+        style="font-family:'iconfont';color:#fff;font-size:34px;">&#xe712;</text>
     </u-header>
     <!-- <scroller style="flex:1;"> -->
       <router-view></router-view>
@@ -15,11 +17,19 @@
   </div>
 </template>
 <script>
+const clipboard = weex.requireModule('clipboard')
+const modal = weex.requireModule('modal')
 const domModule = weex.requireModule('dom')
 export default {
   data () {
     return {
       appHeight: weex.config.deviceHeight + 'px'
+    }
+  },
+  methods: {
+    copy () {
+      clipboard.setString(weex.config.bundleUrl)
+      modal.toast({ message: '已复制地址', duration: 0.3 })
     }
   },
   created () {

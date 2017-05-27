@@ -8,24 +8,24 @@ export default {
     }
   },
   data () {
-    const h = this.$createElement
+    const h = this.$createElement || this.$root.$createElement
     return {
       selectComponent: null,
       options: [],
       renderFn: item => h('div', {
-        attrs: { 'class': 'option' },
         on: {
-          click: function () {
+          click: function (e) {
             if (!item.disabled) {
               this.selectComponent.$emit('selected', item)
               this.$emit('hide-mask')
             }
+            e.stopPropagation()
           }.bind(this)
         },
-        'class': [item.disabled ? 'disabled' : ''] },
+        'class': [item.disabled ? 'disabled option' : 'option'] },
         [
-          h('text', { attrs: { 'class': 'text' }, 'class': [item.selected ? 'text-active' : '', item.disabled ? 'text-disabled' : ''] }, item.label),
-          h('text', { attrs: { 'class': 'icon' }, 'class': [item.selected ? 'icon-active' : '', item.disabled ? 'icon-disabled' : ''] })
+          h('text', { 'class': ['text', item.selected ? 'text-active' : '', item.disabled ? 'text-disabled' : ''] }, item.label),
+          h('text', { 'class': ['icon', item.selected ? 'icon-active' : '', item.disabled ? 'icon-disabled' : ''] })
         ]
       )
     }

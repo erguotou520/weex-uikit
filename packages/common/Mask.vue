@@ -1,5 +1,5 @@
 <template>
-  <div class="mask" :class="[show?'active':'']" @click="$emit('click', false)" :style="{height:height+'px'}"><slot></slot></div>
+  <div class="mask" :class="[show?'active':'']" @click="$emit('click', false)"><slot></slot></div>
 </template>
 <script>
 export default {
@@ -8,11 +8,6 @@ export default {
     show: {
       type: Boolean,
       default: false
-    }
-  },
-  data () {
-    return {
-      height: weex.config.deviceHeight
     }
   },
   created () {
@@ -27,6 +22,7 @@ export default {
   top 0
   right 0
   bottom 0
+  flex 1
   justify-content flex-end
   background-color rgba(0, 0, 0, .5)
   z-index 10
