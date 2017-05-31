@@ -1,5 +1,8 @@
 <template>
-  <div class="mask" :class="[show?'active':'']" @click="$emit('click', false)"><slot></slot></div>
+  <div class="mask" :class="[show?'active':'']" @click="$emit('click', false)"
+    :style="[{'justify-content':justify}]">
+    <slot></slot>
+  </div>
 </template>
 <script>
 export default {
@@ -8,6 +11,10 @@ export default {
     show: {
       type: Boolean,
       default: false
+    },
+    justify: {
+      type: String,
+      default: 'center'
     }
   },
   created () {
@@ -23,7 +30,7 @@ export default {
   right 0
   bottom 0
   flex 1
-  justify-content flex-end
+  align-items center
   background-color rgba(0, 0, 0, .5)
   z-index 10
   opacity 0

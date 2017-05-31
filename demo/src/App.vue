@@ -13,6 +13,7 @@
     <!-- </scroller> -->
     <u-mask :show="$store.getters.maskVisiable" @click="$store.dispatch('toggleMask', false)">
       <u-select-popup :mask-show="$store.getters.maskVisiable" @hide-mask="$store.dispatch('toggleMask', false)"></u-select-popup>
+      <u-loading v-if="$store.getters.loadingVisiable">2秒后消失</u-loading>
     </u-mask>
   </div>
 </template>

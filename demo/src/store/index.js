@@ -3,9 +3,15 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     title: 'weex-uikit',
-    show: {
-      mask: false,
-      select: false
+    mask: {
+      show: false,
+      justify: 'center'
+    },
+    select: {
+      show: false
+    },
+    loading: {
+      show: false
     }
   },
   mutations: {
@@ -13,11 +19,18 @@ const store = new Vuex.Store({
       state.title = title
     },
     TOGGLE_MASK_VISIABLE (state, visiable) {
-      state.show.mask = visiable
+      state.mask.show = visiable
+      state.mask.justify = 'center'
     },
     TOGGLE_SELECT_VISIABLE (state, visiable) {
-      state.show.select = visiable
-      state.show.mask = visiable
+      state.select.show = visiable
+      state.mask.show = visiable
+      state.mask.justify = 'flex-end'
+    },
+    TOGGLE_LOADING_VISIABLE (state, visiable) {
+      state.loading.show = visiable
+      state.mask.show = visiable
+      state.mask.justify = 'center'
     }
   },
   actions: {
@@ -29,6 +42,9 @@ const store = new Vuex.Store({
     },
     toggleSelect ({ commit }, visiable) {
       commit('TOGGLE_SELECT_VISIABLE', visiable)
+    },
+    toggleLoading ({ commit }, visiable) {
+      commit('TOGGLE_LOADING_VISIABLE', visiable)
     }
   },
   getters: {
@@ -36,10 +52,13 @@ const store = new Vuex.Store({
       return state.title
     },
     maskVisiable (state) {
-      return state.show.mask
+      return state.mask.show
     },
     selectVisiable (state) {
-      return state.show.select
+      return state.select.show
+    },
+    loadingVisiable (state) {
+      return state.loading.show
     }
   }
 })

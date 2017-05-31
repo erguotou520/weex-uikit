@@ -12,11 +12,25 @@
     </div>
     <div class="grid-row">
       <div class="grid-cell" @click="jump('/select')"><text>下拉</text></div>
-      <div class="grid-cell" @click="jump('/')"><text></text></div>
+      <div class="grid-cell" @click="showLoading"><text>加载动画</text></div>
       <div class="grid-cell" @click="jump('/')"><text></text></div>
     </div>
   </div>
 </template>
+<script>
+import { mapActions } from 'vuex'
+export default {
+  methods: {
+    ...mapActions(['toggleLoading']),
+    showLoading () {
+      this.toggleLoading(true)
+      // setTimeout(() => {
+      //   this.toggleLoading(false)
+      // }, 2000)
+    }
+  }
+}
+</script>
 <style lang="stylus" scoped>
 @import "../../../packages/theme-default/var.styl"
 .grid-row
