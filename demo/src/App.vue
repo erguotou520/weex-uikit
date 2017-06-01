@@ -3,10 +3,10 @@
     <u-header v-if="$route.path!=='/'">
       <text slot="left"
         @click="$router.history.go(-1)"
-        style="font-family:'iconfont';color:#fff;font-size:34px;">&#xe60c;</text>
+        :style="{fontFamily:'iconfont',color:'#fff',fontSize:'34px'}">&#xe60c;</text>
       {{$store.getters.title}}
       <text slot="right" @click="copy"
-        style="font-family:'iconfont';color:#fff;font-size:34px;">&#xe712;</text>
+        :style="{fontFamily:'iconfont',color:'#fff',fontSize:'34px'}">&#xe712;</text>
     </u-header>
     <!-- <scroller style="flex:1;"> -->
       <router-view></router-view>
