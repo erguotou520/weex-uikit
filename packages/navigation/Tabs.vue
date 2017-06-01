@@ -82,6 +82,7 @@ $tab-height = 88px
   width 160px
   height $tab-height
   line-height $tab-height
+  font-size 30px
   text-align center
   color $color-text-highlight
 .tab-active

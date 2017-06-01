@@ -17,6 +17,7 @@ import USelect from 'packages/form/Select'
 import UHeader from 'packages/navigation/Header'
 import UTabs from 'packages/navigation/Tabs'
 import UTab from 'packages/navigation/Tab'
+import UProgress from 'packages/data/Progress'
 
 Vue.component(UMask.name, UMask)
 Vue.component(USelectPopup.name, USelectPopup)
@@ -37,3 +38,4 @@ Vue.component(USelect.name, USelect)
 Vue.component(UHeader.name, UHeader)
 Vue.component(UTabs.name, UTabs)
 Vue.component(UTab.name, UTab)
+Vue.component(UProgress.name, UProgress)

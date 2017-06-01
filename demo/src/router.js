@@ -9,6 +9,7 @@ import Checkbox from './views/Checkbox'
 import Input from './views/Input'
 import Select from './views/Select'
 import Tab from './views/Tab'
+import Progress from './views/Progress'
 
 import store from './store'
 Vue.use(Router)
@@ -25,7 +26,8 @@ const router = new Router({
     { path: '/checkbox', component: Checkbox },
     { path: '/input', component: Input },
     { path: '/select', component: Select },
-    { path: '/tab', component: Tab }
+    { path: '/tab', component: Tab },
+    { path: '/progress', component: Progress }
   ]
 })
 
