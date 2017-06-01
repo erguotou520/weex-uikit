@@ -11,7 +11,7 @@
     <!-- <scroller style="flex:1;"> -->
       <router-view></router-view>
     <!-- </scroller> -->
-    <u-mask :show="$store.getters.maskVisiable" @click="$store.dispatch('toggleMask', false)">
+    <u-mask :show="$store.getters.maskVisiable" @click="onMaskClick">
       <u-select-popup :mask-show="$store.getters.maskVisiable" @hide-mask="$store.dispatch('toggleMask', false)"></u-select-popup>
       <u-loading v-if="$store.getters.loadingVisiable">2秒后消失</u-loading>
     </u-mask>
@@ -31,6 +31,11 @@ export default {
     copy () {
       clipboard.setString(weex.config.bundleUrl)
       modal.toast({ message: '已复制地址', duration: 0.3 })
+    },
+    onMaskClick () {
+      if (!this.$store.getters.loadingVisiable) {
+        this.$store.dispatch('toggleMask', false)
+      }
     }
   },
   created () {

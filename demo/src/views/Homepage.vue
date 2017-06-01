@@ -24,9 +24,9 @@ export default {
     ...mapActions(['toggleLoading']),
     showLoading () {
       this.toggleLoading(true)
-      // setTimeout(() => {
-      //   this.toggleLoading(false)
-      // }, 2000)
+      setTimeout(() => {
+        this.toggleLoading(false)
+      }, 2000)
     }
   }
 }

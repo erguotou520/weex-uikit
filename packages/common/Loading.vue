@@ -1,6 +1,6 @@
 <template>
   <div class="loading">
-    <image class="img" src="http://img.lanrentuku.com/img/allimg/1212/5-121204193R0-50.gif"></image>
+    <image class="img" src="https://media.giphy.com/media/l0Iy9nEw0XgbPeT16/giphy.gif"></image>
     <text class="text"><slot></slot></text>
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
   justify-content center
   border-radius 20px
 .img
-  width 240px
+  width 200px
   height @width
 .text
   margin-top 10px
