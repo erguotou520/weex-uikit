@@ -17,7 +17,7 @@
     </div>
     <div class="grid-row">
       <div class="grid-cell" @click="jump('/progress')"><text>进度条</text></div>
-      <div class="grid-cell" @click=""><text></text></div>
+      <div class="grid-cell" @click="jump('/cell')"><text>列表</text></div>
       <div class="grid-cell" @click=""><text></text></div>
     </div>
   </div>

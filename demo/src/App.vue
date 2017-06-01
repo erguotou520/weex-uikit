@@ -46,3 +46,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.v-app {
+  background-color: #f9fafc;
+}
+</style>

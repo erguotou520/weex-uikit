@@ -10,6 +10,7 @@ import Input from './views/Input'
 import Select from './views/Select'
 import Tab from './views/Tab'
 import Progress from './views/Progress'
+import Cell from './views/Cell'
 
 import store from './store'
 Vue.use(Router)
@@ -27,7 +28,8 @@ const router = new Router({
     { path: '/input', component: Input },
     { path: '/select', component: Select },
     { path: '/tab', component: Tab },
-    { path: '/progress', component: Progress }
+    { path: '/progress', component: Progress },
+    { path: '/cell', component: Cell }
   ]
 })
 

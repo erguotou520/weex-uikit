@@ -18,6 +18,8 @@ import UHeader from 'packages/navigation/Header'
 import UTabs from 'packages/navigation/Tabs'
 import UTab from 'packages/navigation/Tab'
 import UProgress from 'packages/data/Progress'
+import UCellGroup from 'packages/layout/CellGroup'
+import UCell from 'packages/layout/Cell'
 
 Vue.component(UMask.name, UMask)
 Vue.component(USelectPopup.name, USelectPopup)
@@ -39,3 +41,5 @@ Vue.component(UHeader.name, UHeader)
 Vue.component(UTabs.name, UTabs)
 Vue.component(UTab.name, UTab)
 Vue.component(UProgress.name, UProgress)
+Vue.component(UCellGroup.name, UCellGroup)
+Vue.component(UCell.name, UCell)
