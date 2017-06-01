@@ -3,7 +3,6 @@ import Homepage from './views/Homepage'
 import Color from './views/Color'
 import Text from './views/Text'
 import Button from './views/Button'
-import Header from './views/Header'
 import Radio from './views/Radio'
 import Checkbox from './views/Checkbox'
 import Input from './views/Input'
@@ -22,7 +21,6 @@ const router = new Router({
     { path: '/color', component: Color },
     { path: '/text', component: Text },
     { path: '/button', component: Button },
-    { path: '/header', component: Header },
     { path: '/radio', component: Radio },
     { path: '/checkbox', component: Checkbox },
     { path: '/input', component: Input },

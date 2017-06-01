@@ -1,12 +1,9 @@
 <template>
   <div class="v-app" style="flex-direction:column;" :style="{height:appHeight}">
     <u-header v-if="$route.path!=='/'">
-      <text slot="left"
-        @click="$router.history.go(-1)"
-        :style="{fontFamily:'iconfont',color:'#fff',fontSize:'34px'}">&#xe60c;</text>
+      <v-icon slot="left" color="#fff" @click="$router.history.go(-1)">&#xe60c;</v-icon>
       {{$store.getters.title}}
-      <text slot="right" @click="copy"
-        :style="{fontFamily:'iconfont',color:'#fff',fontSize:'34px'}">&#xe712;</text>
+      <v-icon slot="right" color="#fff" @click="copy">&#xe712;</v-icon>
     </u-header>
     <!-- <scroller style="flex:1;"> -->
       <router-view></router-view>
@@ -20,7 +17,6 @@
 <script>
 const clipboard = weex.requireModule('clipboard')
 const modal = weex.requireModule('modal')
-const domModule = weex.requireModule('dom')
 export default {
   data () {
     return {
@@ -37,12 +33,6 @@ export default {
         this.$store.dispatch('toggleMask', false)
       }
     }
-  },
-  created () {
-    domModule.addRule('fontFace', {
-      'fontFamily': 'iconfont',
-      'src': "url('//at.alicdn.com/t/font_0dgio1v15kz6ko6r.ttf')"
-    })
   }
 }
 </script>
