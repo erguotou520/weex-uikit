@@ -9,13 +9,14 @@ import UH5 from 'packages/text/H5'
 import UH6 from 'packages/text/H6'
 import UH7 from 'packages/text/H7'
 import UButton from 'packages/button/Button'
-import UHeader from 'packages/navigation/Header'
 import URadio from 'packages/form/Radio'
 import UCheckbox from 'packages/form/Checkbox'
 import USwitch from 'packages/form/Switch'
 import UInput from 'packages/form/Input'
 import USelect from 'packages/form/Select'
-import UOption from 'packages/form/Option'
+import UHeader from 'packages/navigation/Header'
+import UTabs from 'packages/navigation/Tabs'
+import UTab from 'packages/navigation/Tab'
 
 Vue.component(UMask.name, UMask)
 Vue.component(USelectPopup.name, USelectPopup)
@@ -28,10 +29,11 @@ Vue.component(UH5.name, UH5)
 Vue.component(UH6.name, UH6)
 Vue.component(UH7.name, UH7)
 Vue.component(UButton.name, UButton)
-Vue.component(UHeader.name, UHeader)
 Vue.component(URadio.name, URadio)
 Vue.component(UCheckbox.name, UCheckbox)
 Vue.component(USwitch.name, USwitch)
 Vue.component(UInput.name, UInput)
 Vue.component(USelect.name, USelect)
-Vue.component(UOption.name, UOption)
+Vue.component(UHeader.name, UHeader)
+Vue.component(UTabs.name, UTabs)
+Vue.component(UTab.name, UTab)

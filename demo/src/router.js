@@ -8,6 +8,7 @@ import Radio from './views/Radio'
 import Checkbox from './views/Checkbox'
 import Input from './views/Input'
 import Select from './views/Select'
+import Tab from './views/Tab'
 
 import store from './store'
 Vue.use(Router)
@@ -23,7 +24,8 @@ const router = new Router({
     { path: '/radio', component: Radio },
     { path: '/checkbox', component: Checkbox },
     { path: '/input', component: Input },
-    { path: '/select', component: Select }
+    { path: '/select', component: Select },
+    { path: '/tab', component: Tab }
   ]
 })
 

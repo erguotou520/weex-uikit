@@ -8,12 +8,12 @@
     <div class="grid-row">
       <div class="grid-cell" @click="jump('/radio')"><text>单选</text></div>
       <div class="grid-cell" @click="jump('/checkbox')"><text>多选</text></div>
-      <div class="grid-cell" @click="jump('/input')"><text>输入框</text></div>
+      <div class="grid-cell" @click="jump('/input')"><text>输入框(待优化)</text></div>
     </div>
     <div class="grid-row">
       <div class="grid-cell" @click="jump('/select')"><text>下拉</text></div>
-      <div class="grid-cell" @click="showLoading"><text>加载动画</text></div>
-      <div class="grid-cell" @click="jump('/')"><text></text></div>
+      <div class="grid-cell" @click="showLoading"><text>加载动画(仅做参考)</text></div>
+      <div class="grid-cell" @click="jump('/tab')"><text>Tab页(待修复)</text></div>
     </div>
   </div>
 </template>
