@@ -33,8 +33,7 @@ export default {
   flex-direction row
   align-items center
   justify-content space-between
-  padding-top 32px
-  padding-bottom 32px
+  min-height 94px
   padding-left 20px
   padding-right 20px
   background-color #fff
@@ -45,6 +44,7 @@ export default {
   flex-direction row
   align-items center
 .right
+  min-height 30px
   flex-direction row
   align-items center
 .text

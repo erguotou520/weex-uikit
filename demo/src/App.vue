@@ -1,9 +1,9 @@
 <template>
   <div class="v-app" style="flex-direction:column;" :style="{height:appHeight}">
     <u-header v-if="$route.path!=='/'">
-      <v-icon slot="left" color="#fff" @click="$router.history.go(-1)">&#xe60c;</v-icon>
+      <v-icon slot="left" color="#fff" @click="$router.go(-1)">&#xe621;</v-icon>
       {{$store.getters.title}}
-      <v-icon slot="right" color="#fff" @click="copy">&#xe712;</v-icon>
+      <v-icon slot="right" color="#fff" @click="copy">&#xe666;</v-icon>
     </u-header>
     <!-- <scroller style="flex:1;"> -->
       <router-view></router-view>

@@ -18,6 +18,8 @@ import USelect from 'packages/form/Select'
 import UHeader from 'packages/navigation/Header'
 import UTabs from 'packages/navigation/Tabs'
 import UTab from 'packages/navigation/Tab'
+import UNavbar from 'packages/navigation/Navbar'
+import UNavbarItem from 'packages/navigation/NavbarItem'
 import UProgress from 'packages/data/Progress'
 import UCellGroup from 'packages/layout/CellGroup'
 import UCell from 'packages/layout/Cell'
@@ -42,6 +44,8 @@ Vue.component(USelect.name, USelect)
 Vue.component(UHeader.name, UHeader)
 Vue.component(UTabs.name, UTabs)
 Vue.component(UTab.name, UTab)
+Vue.component(UNavbar.name, UNavbar)
+Vue.component(UNavbarItem.name, UNavbarItem)
 Vue.component(UProgress.name, UProgress)
 Vue.component(UCellGroup.name, UCellGroup)
 Vue.component(UCell.name, UCell)
