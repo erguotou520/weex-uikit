@@ -14,6 +14,7 @@ import Progress from './views/Progress'
 import Cell from './views/Cell'
 import Navbar from './views/Navbar'
 import NavbarContent from './views/NavbarContent'
+import Checker from './views/Checker'
 
 import store from './store'
 Vue.use(Router)
@@ -48,7 +49,8 @@ const router = new Router({
       { path: 'cart', component: createNavContent('cart') },
       { path: 'order', component: createNavContent('order') },
       { path: 'my', component: createNavContent('my') }
-    ] }
+    ] },
+    { path: '/checker', component: Checker }
   ]
 })
 
