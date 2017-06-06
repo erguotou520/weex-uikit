@@ -12,9 +12,19 @@ import Tab from './views/Tab'
 import Progress from './views/Progress'
 import Cell from './views/Cell'
 import Navbar from './views/Navbar'
+import NavbarContent from './views/NavbarContent'
 
 import store from './store'
 Vue.use(Router)
+
+function createNavContent (content) {
+  return {
+    name: `navbar-content-${content}`,
+    render (h) {
+      return h(NavbarContent, { props: { content }})
+    }
+  }
+}
 
 const router = new Router({
   // mode: 'abstract',
@@ -32,10 +42,10 @@ const router = new Router({
     { path: '/progress', component: Progress },
     { path: '/cell', component: Cell },
     { path: '/navbar', component: Navbar, children: [
-      { path: '/', component: { template: '<text>home</text>' }},
-      { path: 'cart', component: { template: '<text>cart</text>' }},
-      { path: 'order', component: { render (h) { h('text', 'order') } }},
-      { path: 'my', component: { render (h) { h('text', 'my') } }}
+      { path: '/', component: createNavContent('home') },
+      { path: 'cart', component: createNavContent('cart') },
+      { path: 'order', component: createNavContent('order') },
+      { path: 'my', component: createNavContent('my') }
     ] }
   ]
 })

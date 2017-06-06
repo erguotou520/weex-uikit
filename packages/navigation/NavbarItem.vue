@@ -41,7 +41,7 @@ export default {
   methods: {
     onClick () {
       if (this.$parent) {
-        this.$parent.selectBar(this)
+        this.$parent.selectBar(this.index)
         if (this.$router && this.$parent.router) {
           this.$router.push(this.index)
         } else {
@@ -60,7 +60,6 @@ export default {
       return
     }
     this.$parent = parent
-    this.index = parent.addBar(this)
   },
   beforeDestroy () {
     this.$parent && this.$parent.removeBar(this)

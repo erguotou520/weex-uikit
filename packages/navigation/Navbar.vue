@@ -31,13 +31,6 @@ export default {
       return this.bars.map(bar => bar.index).indexOf(this.value) || 0
     }
   },
-  watch: {
-    value (val) {
-      this.$nextTick(() => {
-        this.animateLine()
-      })
-    }
-  },
   methods: {
     addBar (bar) {
       this.bars.push(bar)
