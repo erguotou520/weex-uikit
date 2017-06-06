@@ -3,7 +3,7 @@
     <div class="grid-row">
       <div class="grid-cell" @click="jump('/color')"><text>颜色</text></div>
       <div class="grid-cell" @click="jump('/text')"><text>文本</text></div>
-      <div class="grid-cell" @click="jump('/iconfont')"><text></text></div>
+      <div class="grid-cell" @click="jump('/iconfont')"><text>iconfont</text></div>
     </div>
     <div class="grid-row">
       <div class="grid-cell" @click="jump('/button')"><text>按钮</text></div>

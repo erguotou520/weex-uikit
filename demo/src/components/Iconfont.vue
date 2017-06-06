@@ -1,5 +1,7 @@
 <template>
-  <text :style="style"><slot></slot></text>
+  <text :style="style"
+    @click="e=>$emit('click', e)"
+    @longpress="e=>$emit('longpress', e)"><slot></slot></text>
 </template>
 <script>
 const domModule = weex.requireModule('dom')
