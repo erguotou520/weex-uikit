@@ -7,6 +7,7 @@ import Button from './views/Button'
 import Radio from './views/Radio'
 import Checkbox from './views/Checkbox'
 import Input from './views/Input'
+import InputNumber from './views/InputNumber'
 import Select from './views/Select'
 import Tab from './views/Tab'
 import Progress from './views/Progress'
@@ -37,6 +38,7 @@ const router = new Router({
     { path: '/radio', component: Radio },
     { path: '/checkbox', component: Checkbox },
     { path: '/input', component: Input },
+    { path: '/input-number', component: InputNumber },
     { path: '/select', component: Select },
     { path: '/tab', component: Tab },
     { path: '/progress', component: Progress },

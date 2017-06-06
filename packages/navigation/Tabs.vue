@@ -1,9 +1,7 @@
 <template>
   <div>
     <div class="tab-nav" ref="tabs">
-      <text v-for="tab in tabs" class="tab" :class="[tab.value===value? 'tab-active' : '']" @click="selectTab(tab)">
-        {{tab.label}}
-      </text>
+      <text v-for="tab in tabs" class="tab" :class="[tab.value===value? 'tab-active' : '']" @click="selectTab(tab)">{{tab.label}}</text>
       <div class="line" ref="line" :style="{width: lineWidth+'px'}"></div>
     </div>
     <div class="tab-content">
@@ -79,7 +77,7 @@ $tab-height = 88px
   flex-direction row
   height $tab-height
 .tab
-  width 160px
+  flex 1
   height $tab-height
   line-height $tab-height
   font-size 30px

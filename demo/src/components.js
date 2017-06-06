@@ -14,6 +14,7 @@ import URadio from 'packages/form/Radio'
 import UCheckbox from 'packages/form/Checkbox'
 import USwitch from 'packages/form/Switch'
 import UInput from 'packages/form/Input'
+import UInputNumber from 'packages/form/InputNumber'
 import USelect from 'packages/form/Select'
 import UHeader from 'packages/navigation/Header'
 import UTabs from 'packages/navigation/Tabs'
@@ -40,6 +41,7 @@ Vue.component(URadio.name, URadio)
 Vue.component(UCheckbox.name, UCheckbox)
 Vue.component(USwitch.name, USwitch)
 Vue.component(UInput.name, UInput)
+Vue.component(UInputNumber.name, UInputNumber)
 Vue.component(USelect.name, USelect)
 Vue.component(UHeader.name, UHeader)
 Vue.component(UTabs.name, UTabs)

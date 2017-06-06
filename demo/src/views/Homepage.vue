@@ -12,17 +12,17 @@
     </div>
     <div class="grid-row">
       <div class="grid-cell" @click="jump('/input')"><text>输入框(待优化)</text></div>
+      <div class="grid-cell" @click="jump('/input-number')"><text>数字选择</text></div>
       <div class="grid-cell" @click="jump('/select')"><text>下拉(待优化)</text></div>
-      <div class="grid-cell" @click="showLoading"><text>加载动画(仅做参考)</text></div>
     </div>
     <div class="grid-row">
+      <div class="grid-cell" @click="showLoading"><text>加载动画(仅做参考)</text></div>
       <div class="grid-cell" @click="jump('/tab')"><text>Tab页(待修复)</text></div>
       <div class="grid-cell" @click="jump('/progress')"><text>进度条</text></div>
-      <div class="grid-cell" @click="jump('/cell')"><text>列表</text></div>
     </div>
     <div class="grid-row">
+      <div class="grid-cell" @click="jump('/cell')"><text>列表</text></div>
       <div class="grid-cell" @click="jump('/navbar')"><text>Navbar</text></div>
-      <div class="grid-cell" @click="jump('/')"><text></text></div>
       <div class="grid-cell" @click="jump('/')"><text></text></div>
     </div>
   </div>
