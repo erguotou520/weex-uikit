@@ -1,7 +1,7 @@
 <template>
   <div class="input-number" :class="[disabled?'input-number-disabled':'']">
     <text class="minus" :class="[minusDisabled?'minus-disabled':'']" @click="minus">-</text>
-    <input v-if="!disabled" type="number" class="input" :class="[disabled?'input-disabled':'']" :value="value" @input="onInput"></input>
+    <input v-if="!disabled" type="tel" class="input" :class="[disabled?'input-disabled':'']" :value="value" @input="onInput"></input>
     <text v-else class="input" :class="[disabled?'input-disabled':'']">{{value}}</text>
     <text class="plus" :class="[plusDisabled?'plus-disabled':'']" @click="plus">+</text>
   </div>
@@ -40,8 +40,6 @@ export default {
     onInput (e) {
       if ((this.min === undefined || e.value > this.min) || (this.max === undefined || e.value < this.max)) {
         this.$emit('input', +e.value)
-      } else {
-        e.preventDefault()
       }
     }
   }
