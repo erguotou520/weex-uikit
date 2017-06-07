@@ -15,6 +15,7 @@ import Cell from './views/Cell'
 import Navbar from './views/Navbar'
 import NavbarContent from './views/NavbarContent'
 import Checker from './views/Checker'
+import Range from './views/Range'
 
 import store from './store'
 Vue.use(Router)
@@ -50,7 +51,8 @@ const router = new Router({
       { path: 'order', component: createNavContent('order') },
       { path: 'my', component: createNavContent('my') }
     ] },
-    { path: '/checker', component: Checker }
+    { path: '/checker', component: Checker },
+    { path: '/range', component: Range }
   ]
 })
 

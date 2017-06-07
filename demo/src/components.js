@@ -1,5 +1,6 @@
 import VFont from './components/Iconfont'
 import VChecker from './components/Checker'
+import VRange from './components/Range'
 import UMask from 'packages/common/Mask'
 import USelectPopup from 'packages/common/SelectPopup'
 import ULoading from 'packages/common/Loading'
@@ -28,6 +29,7 @@ import UCell from 'packages/layout/Cell'
 
 Vue.component(VFont.name, VFont)
 Vue.component(VChecker.name, VChecker)
+Vue.component(VRange.name, VRange)
 Vue.component(UMask.name, UMask)
 Vue.component(USelectPopup.name, USelectPopup)
 Vue.component(ULoading.name, ULoading)

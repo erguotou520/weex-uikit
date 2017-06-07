@@ -25,6 +25,11 @@
       <div class="grid-cell" @click="jump('/navbar')"><text>Navbar</text></div>
       <div class="grid-cell" @click="jump('/checker')"><text>全选</text></div>
     </div>
+    <div class="grid-row">
+      <div class="grid-cell" @click="jump('/range')"><text>Range</text></div>
+      <div class="grid-cell" @click="jump('/')"><text></text></div>
+      <div class="grid-cell" @click="jump('/')"><text></text></div>
+    </div>
   </div>
 </template>
 <script>
