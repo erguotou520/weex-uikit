@@ -3,13 +3,15 @@
     <text class="min">{{min}}</text>
     <div class="axis" :class="[disabled?'axis-disabled':'']" ref="axis"></div>
     <div class="completed" :class="[disabled?'completed-disabled':'']" :style="{width:`${offset}px`}"></div>
-    <text class="circle" :class="[disabled?'circle-disabled':'']" @panstart="onPanStart" @panmove="onPanMove"
-      ref="circle" :style="{transform:`translateX(${offset}px)`}">{{value}}</text>
+    <text class="circle" :class="[disabled?'circle-disabled':'']"
+      @panstart="onPanStart" @panmove="onPanMove" @panend="onPanEnd"
+      ref="circle" :style="{transform:`translateX(${offset}px) scale(${isDragging?1.2:1})`}">{{value}}</text>
     <text class="max">{{max}}</text>
   </div>
 </template>
 <script>
 const dom = weex.requireModule('dom')
+import { Draggable } from '../../../packages/mixins/draggable1'
 export default {
   name: 'v-range',
   props: {
@@ -31,34 +33,52 @@ export default {
     return {
       x1: 0,
       offset: 0,
-      axisWidth: 0
+      axisWidth: 0,
+      $circle: null
     }
   },
   computed: {
     rate () {
       return (this.max - this.min) / this.axisWidth
+    },
+    isDragging () {
+      return this.$circle && this.$circle.isDragging
     }
   },
   methods: {
-    onPanStart (e) {
+    _onDragStart (_offset) {
       if (!this.disabled) {
-        this.x1 = e.changedTouches[0].pageX
+        this.x1 = _offset.x
       }
+    },
+    _onDragMove (_offset) {
+      if (!this.disabled) {
+        const offset = _offset.x - this.x1
+        // 超出边界
+        if ((this.offset === 0 && offset <= 0) || (this.offset === this.axisWidth && offset >= 0)) {
+          return
+        }
+        const targetOffset = this.offset + offset
+        if (targetOffset < 0) {
+          this.offset = 0
+        } else if (targetOffset > this.axisWidth) {
+          this.offset = this.axisWidth
+        } else {
+          this.offset = this.offset + offset
+        }
+        this.x1 = _offset.x
+        this.$emit('input', Math.round(this.offset * this.rate + this.min))
+      }
+    },
+    onPanStart (e) {
+      this._onDragStart(e.changedTouches[0].pageX)
     },
     onPanMove (e) {
-      if (!this.disabled) {
-        const offset = e.changedTouches[0].pageX - this.x1
-        if (this.offset + offset >= 0 && this.offset + offset <= this.axisWidth) {
-          this.offset += offset
-          this.x1 = e.changedTouches[0].pageX
-          this.$emit('input', Math.round(this.offset * this.rate + this.min))
-        }
-      }
+      this._onDragMove(e.changedTouches[0].pageX)
     },
-    webInit () {
-      if (WXEnvironment.platform === 'Web') {
-        this.$refs.circle.$el.addEventListener('touchstart', this.onPanStart, false)
-        this.$refs.circle.$el.addEventListener('touchmove', this.onPanMove, false)
+    onPanEnd () {
+      if (!this.disabled) {
+        this.$emit('change', Math.round(this.offset * this.rate + this.min))
       }
     }
   },
@@ -68,14 +88,15 @@ export default {
         this.axisWidth = option.size.width
         this.offset = (this.value - this.min) / this.rate
       })
-      this.webInit()
+      this.$circle = new Draggable(this.$refs.circle.$el, {
+        start: this._onDragStart,
+        move: this._onDragMove,
+        end: this._onDragEnd
+      })
     })
   },
   beforeDestroy () {
-    if (WXEnvironment.platform === 'Web') {
-      this.$refs.circle.$el.removeEventListener('touchstart', this.onPanStart, false)
-      this.$refs.circle.$el.removeEventListener('touchmove', this.onPanMove, false)
-    }
+    this.$circle && this.$circle.removeListener()
   }
 }
 </script>
@@ -123,6 +144,7 @@ $circle-radius = 48
   color #fff
   background-color $color-primary
   border-radius ($circle-radius / 2)px
+  box-shadow 1px 1px 15px $color-primary
 .circle-disabled
   background-color lighten($color-primary, 50%)
 </style>
