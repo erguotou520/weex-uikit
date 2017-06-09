@@ -12,19 +12,19 @@ import Select from './views/Select'
 import Tab from './views/Tab'
 import Progress from './views/Progress'
 import Cell from './views/Cell'
-import Navbar from './views/Navbar'
-import NavbarContent from './views/NavbarContent'
+import Tabbar from './views/Tabbar'
+import TabbarContent from './views/TabbarContent'
 import Checker from './views/Checker'
 import Range from './views/Range'
-
+import Resource from './views/Resource'
 import store from './store'
 Vue.use(Router)
 
 function createNavContent (content) {
   return {
-    name: `navbar-content-${content}`,
+    name: `tabbar-content-${content}`,
     render (h) {
-      return h(NavbarContent, { props: { content }})
+      return h(TabbarContent, { props: { content }})
     }
   }
 }
@@ -45,14 +45,15 @@ const router = new Router({
     { path: '/tab', component: Tab },
     { path: '/progress', component: Progress },
     { path: '/cell', component: Cell },
-    { path: '/navbar', component: Navbar, children: [
+    { path: '/tabbar', component: Tabbar, children: [
       { path: '/', component: createNavContent('home') },
       { path: 'cart', component: createNavContent('cart') },
       { path: 'order', component: createNavContent('order') },
       { path: 'my', component: createNavContent('my') }
     ] },
     { path: '/checker', component: Checker },
-    { path: '/range', component: Range }
+    { path: '/range', component: Range },
+    { path: '/resource', component: Resource }
   ]
 })
 

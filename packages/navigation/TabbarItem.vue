@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar-item" @click="onClick">
+  <div class="tabbar-item" @click="onClick">
     <slot v-if="!actived" name="normal"></slot>
     <slot v-else name="active"></slot>
     <text v-if="!$slots.normal&&$parent&&$parent.imageType==='iconfont'"
@@ -12,7 +12,7 @@
 <script>
 const modal = weex.requireModule('modal')
 export default {
-  name: 'u-navbar-item',
+  name: 'u-tabbar-item',
   props: {
     label: {
       type: String,
@@ -52,11 +52,11 @@ export default {
   },
   created () {
     let parent = this.$parent
-    while (parent.$parent && parent.$options._componentTag !== 'u-navbar') {
+    while (parent.$parent && parent.$options._componentTag !== 'u-tabbar') {
       parent = parent.$parent
     }
-    if (parent.$options._componentTag !== 'u-navbar') {
-      modal.toast({ message: 'u-navbar-item不能单独使用', duration: 0.3 })
+    if (parent.$options._componentTag !== 'u-tabbar') {
+      modal.toast({ message: 'u-tabbar-item不能单独使用', duration: 0.3 })
       return
     }
     this.$parent = parent
@@ -68,7 +68,7 @@ export default {
 </script>
 <style lang="stylus" scoped>
 @import "../theme-default/var.styl"
-.navbar-item
+.tabbar-item
   flex 1
   height 100px
   align-items center

@@ -1,11 +1,11 @@
 <template>
-  <div class="navbar">
+  <div class="tabbar">
     <slot></slot>
   </div>
 </template>
 <script>
 export default {
-  name: 'u-navbar',
+  name: 'u-tabbar',
   props: {
     value: {
       type: String
@@ -47,7 +47,7 @@ export default {
 </script>
 <style lang="stylus" scoped>
 @import "../theme-default/var.styl"
-.navbar
+.tabbar
   position relative
   flex-direction row
   align-items center
