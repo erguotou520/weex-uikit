@@ -1,73 +1,74 @@
-let isDragging = false
-export default {
-  data () {
-    return {
-      dragOption: {
-        start: null,
-        move: null,
-        end: null
-      },
-      isDragging: false,
-      supportTouch: WXEnvironment.platform === 'Web' && 'ontouchstart' in window
-    }
-  },
-  methods: {
-    _getOffset (e) {
-      if (this.supportTouch) {
-        return {
-          x: e.changedTouches[0].pageX,
-          y: e.changedTouches[0].pageY
-        }
-      } else {
-        return {
-          x: e.pageX,
-          y: e.pageY
+const supportTouch = WXEnvironment.platform === 'Web' && 'ontouchstart' in window
+export class Draggable {
+  constructor (element, option) {
+    if (WXEnvironment.platform === 'Web') {
+      this.isDragging = false
+
+      const _getOffset = function (e) {
+        if (supportTouch) {
+          return {
+            x: e.changedTouches[0].pageX,
+            y: e.changedTouches[0].pageY
+          }
+        } else {
+          return {
+            x: e.pageX,
+            y: e.pageY
+          }
         }
       }
-    },
-    onDragStart (e) {
-      if (!isDragging) {
-        isDragging = true
+
+      const onDragStart = function (e) {
         this.isDragging = true
         document.onselectstart = () => false
         document.ondragstart = () => false
-        if (this.dragOption.start) {
-          this.dragOption.start(this._getOffset(e))
+        if (!supportTouch) {
+          element.addEventListener('mousemove', onDragMove, false)
+          element.addEventListener('mouseup', onDragEnd, false)
+          element.addEventListener('mouseout', onDragEnd, false)
         }
-      }
-    },
-    onDragMove (e) {
-      if (this.dragOption.move) {
-        this.dragOption.move(this._getOffset(e))
-      }
-    },
-    onDragEnd (e) {
-      isDragging = false
-      this.isDragging = false
-      if (this.dragOption.end) {
-        this.dragOption.end(this._getOffset(e))
+
+        if (option.start) {
+          option.start(_getOffset(e))
+        }
       }
 
-      document.onselectstart = null
-      document.ondragstart = null
-    },
-    initWebDragEvent (ele) {
-      if (WXEnvironment.platform === 'Web') {
-        ele.addEventListener(this.supportTouch ? 'touchstart' : 'mousedown', this.onDragStart, false)
-        ele.addEventListener(this.supportTouch ? 'touchmove' : 'mousemove', this.onDragMove, false)
-        ele.addEventListener(this.supportTouch ? 'touchend' : 'mouseup', this.onDragEnd, false)
-        if (this.supportTouch) {
-          ele.addEventListener('touchcancel', this.onDragEnd, false)
+      const onDragMove = function (e) {
+        if (option.move) {
+          option.move(_getOffset(e))
         }
       }
-    },
-    removeWebDragEvent (ele) {
-      if (WXEnvironment.platform === 'Web') {
-        ele.removeEventListener(this.supportTouch ? 'touchstart' : 'mousedown', this.onPanStart, false)
-        ele.removeEventListener(this.supportTouch ? 'touchmove' : 'mousemove', this.onPanMove, false)
-        ele.removeEventListener(this.supportTouch ? 'touchend' : 'mouseup', this.onPanEnd, false)
-        if (this.supportTouch) {
-          ele.removeEventListener('touchcancel', this.onDragEnd, false)
+
+      const onDragEnd = function (e) {
+        this.isDragging = false
+        document.onselectstart = null
+        document.ondragstart = null
+
+        if (!supportTouch) {
+          element.removeEventListener('mousemove', onDragMove, false)
+          element.removeEventListener('mouseup', onDragEnd, false)
+          element.removeEventListener('mouseout', onDragEnd, false)
+        }
+
+        if (option.end) {
+          option.end(_getOffset(e))
+        }
+      }
+
+      element.addEventListener(supportTouch ? 'touchstart' : 'mousedown', onDragStart, false)
+
+      if (supportTouch) {
+        element.addEventListener('touchmove', onDragMove, false)
+        element.addEventListener('touchend', onDragEnd, false)
+        element.addEventListener('touchcancel', onDragEnd, false)
+      }
+
+      this.removeListener = function () {
+        element.removeEventListener(supportTouch ? 'touchstart' : 'mousedown', onDragStart, false)
+        if (supportTouch) {
+          element.removeEventListener('touchmove', onDragMove, false)
+          element.removeEventListener('touchend', onDragEnd, false)
+          element.removeEventListener('touchcancel', onDragEnd, false)
         }
       }
     }

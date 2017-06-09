@@ -11,7 +11,7 @@
 </template>
 <script>
 const dom = weex.requireModule('dom')
-import { Draggable } from '../../../packages/mixins/draggable1'
+import { Draggable } from '../../../packages/mixins/draggable'
 export default {
   name: 'v-range',
   props: {
@@ -71,10 +71,10 @@ export default {
       }
     },
     onPanStart (e) {
-      this._onDragStart(e.changedTouches[0].pageX)
+      this._onDragStart({ x: e.changedTouches[0].pageX })
     },
     onPanMove (e) {
-      this._onDragMove(e.changedTouches[0].pageX)
+      this._onDragMove({ x: e.changedTouches[0].pageX })
     },
     onPanEnd () {
       if (!this.disabled) {
