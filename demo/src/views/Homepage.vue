@@ -36,7 +36,7 @@
       <div class="grid-cell" @click="jump('/timeline')"><text>时间轴(未开发)</text></div>
     </div>
     <div class="grid-row">
-      <div class="grid-cell" @click="jump('/resource')"><text>远程请求(未开发)</text></div>
+      <div class="grid-cell" @click="jump('/resource')"><text>远程请求(简单封装)</text></div>
       <div class="grid-cell" @click="jump('/date-format')"><text>时间格式化(未开发)</text></div>
       <div class="grid-cell" @click="jump('/throttle')"><text>函数节流(未开发)</text></div>
     </div>

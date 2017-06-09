@@ -21,6 +21,7 @@
     background-color: #ff3083;
     border-radius: 50%;
     box-shadow: 1px 3px 13px 0px #ce4e81;
+    z-index: 99999;
   }
 
   ._mask {
@@ -33,6 +34,7 @@
     display: none;
     align-items: center;
     justify-content: center;
+    z-index: 99999999;
   }
 
   ._box {
