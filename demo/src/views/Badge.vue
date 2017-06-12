@@ -8,12 +8,12 @@
       </div>
       <div class="cell">
         <u-badge dot>
-          <text>新闻</text>
+          <text class="text">新闻</text>
         </u-badge>
       </div>
       <div class="cell">
         <u-badge :count="count1">
-          <text @click="() => count1 = count1 > 0 ? count1 - 1 : 0">点击后减少</text>
+          <text class="text" @click="() => count1 = count1 > 0 ? count1 - 1 : 0">点击后减少</text>
         </u-badge>
       </div>
     </div>
@@ -46,4 +46,7 @@ export default {
   flex 1
   flex-direction row
   justify-content center
+.text
+  font-size 28px
+  color #667180
 </style>

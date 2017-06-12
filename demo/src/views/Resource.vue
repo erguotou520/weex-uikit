@@ -47,7 +47,6 @@ export default {
 }
 .users {
   flex: 1;
-  min-height: 400px;
   padding-bottom: 120px;
 }
 .user {
@@ -60,12 +59,15 @@ export default {
   padding-right: 20px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
+  border-bottom-color: #b8c7d8;
 }
 .user-name {
   font-size: 32px;
+  color: #667180;
 }
 .user-email {
   font-size: 24px;
+  color: #b8c7d8;
 }
 .btn {
   position: fixed;

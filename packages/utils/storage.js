@@ -5,9 +5,9 @@ function valid (val) {
 }
 
 export default {
-  async getItem (key) {
-    if (valid(key)) {
-      await new Promise((resolve, reject) => {
+  getItem (key) {
+    return new Promise((resolve, reject) => {
+      if (valid(key)) {
         storage.getItem(key, e => {
           if (e.result === 'success') {
             resolve(e.data)
@@ -15,14 +15,14 @@ export default {
             reject(e.result)
           }
         })
-      })
-    } else {
-      return null
-    }
+      } else {
+        reject('key can\'t be null')
+      }
+    })
   },
-  async setItem (key, value) {
-    if (valid(key) && valid(value)) {
-      await new Promise((resolve, reject) => {
+  setItem (key, value) {
+    return new Promise((resolve, reject) => {
+      if (valid(key) && valid(value)) {
         storage.setItem(key, value, e => {
           if (e.result === 'success') {
             resolve()
@@ -30,14 +30,14 @@ export default {
             reject(e.result)
           }
         })
-      })
-    } else {
-      console.error('key & value can\'t be null')
-    }
+      } else {
+        reject('key & value can\'t be null')
+      }
+    })
   },
-  async removeItem (key) {
-    if (valid(key)) {
-      await new Promise((resolve, reject) => {
+  removeItem (key) {
+    return new Promise((resolve, reject) => {
+      if (valid(key)) {
         storage.removeItem(key, e => {
           if (e.result === 'success') {
             resolve()
@@ -45,9 +45,9 @@ export default {
             reject(e.result)
           }
         })
-      })
-    } else {
-      console.error('key can\'t be null')
-    }
+      } else {
+        reject('key can\'t be null')
+      }
+    })
   }
 }

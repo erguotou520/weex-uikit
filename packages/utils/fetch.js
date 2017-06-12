@@ -22,31 +22,30 @@ function fetch (options) {
 }
 
 export default {
-  async get (url, query, options) {
+  get (url, query, options) {
     const _options = assign({}, DEFAULT_OPTION, options, { method: 'GET', url: query ? url + '?' + param(query) : url })
-    return await fetch(_options)
+    return fetch(_options)
   },
-  async post (url, body, options) {
+  post (url, body, options) {
     const _options = assign({}, DEFAULT_OPTION, options, { method: 'POST', url, body: body ? JSON.stringify(body) : null })
-    return await fetch(_options)
+    return fetch(_options)
   }
 }
 
-class HttpInstance {
-  constructor (options) {
-    this.$options = assign({}, DEFAULT_OPTION, { root: '' }, options)
-  }
-  async get (url, query, options) {
-    const _options = assign({}, this.$options, options, { method: 'GET', url: this.$options.root + (query ? url + '?' + param(query) : url) })
-    return await fetch(_options)
-  }
-  async post (url, body, options) {
-    const _options = assign({}, this.$options, options, { method: 'POST', url: this.$options.root + url, body: body ? JSON.stringify(body) : null })
-    return await fetch(_options)
-  }
-  setHeaders (headers) {
-    assign(this.$options.headers, headers)
-  }
+function HttpInstance (options) {
+  this.$options = assign({}, DEFAULT_OPTION, { root: '' }, options)
+}
+
+HttpInstance.prototype.get = function (url, query, options) {
+  const _options = assign({}, this.$options, options, { method: 'GET', url: this.$options.root + (query ? url + '?' + param(query) : url) })
+  return fetch(_options)
+}
+HttpInstance.prototype.post = function (url, body, options) {
+  const _options = assign({}, this.$options, options, { method: 'POST', url: this.$options.root + url, body: body ? JSON.stringify(body) : null })
+  return fetch(_options)
+}
+HttpInstance.prototype.setHeaders = function (headers) {
+  assign(this.$options.headers, headers)
 }
 
 export function createInstance (options) {
