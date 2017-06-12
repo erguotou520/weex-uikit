@@ -56,6 +56,18 @@
         <v-icon>&#xe712;</v-icon>
       </div>
     </div>
+    <div class="icon-row">
+      <div class="icon-cell">
+        <v-icon>&#xe673;</v-icon>
+      </div>
+      <div class="icon-cell">
+        <v-icon>&#xe674;</v-icon>
+      </div>
+      <div class="icon-cell">
+      </div>
+      <div class="icon-cell">
+      </div>
+    </div>
   </div>
 </template>
 <style lang="stylus" scoped>
