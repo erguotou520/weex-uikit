@@ -17,6 +17,7 @@ import TabbarContent from './views/TabbarContent'
 import Checker from './views/Checker'
 import Range from './views/Range'
 import Resource from './views/Resource'
+import DateFormat from './views/DateFormat'
 import store from './store'
 Vue.use(Router)
 
@@ -53,7 +54,8 @@ const router = new Router({
     ] },
     { path: '/checker', component: Checker },
     { path: '/range', component: Range },
-    { path: '/resource', component: Resource }
+    { path: '/resource', component: Resource },
+    { path: '/date-format', component: DateFormat }
   ]
 })
 

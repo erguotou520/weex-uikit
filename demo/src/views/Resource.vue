@@ -41,36 +41,38 @@ export default {
   }
 }
 </script>
-<style lang="stylus" scoped>
-@import "../../../packages/theme-default/var.styl"
-.ajax-resource
-  flex 1
-.users
-  flex 1
-  min-height 400px
-  padding-bottom 120px
-.user
-  flex-direction row
-  justify-content space-between
-  align-items center
-  padding-top 36px
-  padding-bottom 36px
-  padding-left 20px
-  padding-right 20px
-  border-bottom-style solid
-  border-bottom-width 1px
-  border-bottom-color $color-disabled
-.user-name
-  color $color-text-highlight
-  font-size 32px
-.user-email
-  color $color-text-minor
-  font-size 24px
-.btn
-  position fixed
-  bottom 10px
-  left 0
-  right 0
-  flex-direction column
-  align-items center
+<style scoped>
+.ajax-resource {
+  flex: 1;
+}
+.users {
+  flex: 1;
+  min-height: 400px;
+  padding-bottom: 120px;
+}
+.user {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 36px;
+  padding-bottom: 36px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+.user-name {
+  font-size: 32px;
+}
+.user-email {
+  font-size: 24px;
+}
+.btn {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: center;
+}
 </style>

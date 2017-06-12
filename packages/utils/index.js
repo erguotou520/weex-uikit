@@ -6,3 +6,4 @@ export {
   createInstance,
   storage
 }
+export * from './datetime'
