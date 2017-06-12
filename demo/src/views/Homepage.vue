@@ -27,17 +27,17 @@
     </div>
     <div class="grid-row">
       <div class="grid-cell" @click="jump('/range')"><text>Range</text></div>
-      <div class="grid-cell" @click="jump('/badge')"><text>Badge(未开发)</text></div>
-      <div class="grid-cell" @click="jump('/qrcode')"><text>二维码(未开发)</text></div>
+      <div class="grid-cell" @click="jump('/badge')"><text>Badge</text></div>
+      <div class="grid-cell" @click="jump('/rater')"><text>评分(未开发)</text></div>
     </div>
     <div class="grid-row">
-      <div class="grid-cell" @click="jump('/rater')"><text>评分(未开发)</text></div>
       <div class="grid-cell" @click="jump('/drawer')"><text>抽屉按钮(未开发)</text></div>
       <div class="grid-cell" @click="jump('/timeline')"><text>时间轴(未开发)</text></div>
+      <div class="grid-cell" @click="jump('/resource')"><text>远程请求(简单封装)</text></div>
     </div>
     <div class="grid-row">
-      <div class="grid-cell" @click="jump('/resource')"><text>远程请求(简单封装)</text></div>
       <div class="grid-cell" @click="jump('/date-format')"><text>时间格式化(简单的formatter)</text></div>
+      <div class="grid-cell" @click="jump('/')"><text></text></div>
       <div class="grid-cell" @click="jump('/')"><text></text></div>
     </div>
   </div>

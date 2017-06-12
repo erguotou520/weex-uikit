@@ -16,6 +16,7 @@ import Tabbar from './views/Tabbar'
 import TabbarContent from './views/TabbarContent'
 import Checker from './views/Checker'
 import Range from './views/Range'
+import Badge from './views/Badge'
 import Resource from './views/Resource'
 import DateFormat from './views/DateFormat'
 import store from './store'
@@ -54,6 +55,7 @@ const router = new Router({
     ] },
     { path: '/checker', component: Checker },
     { path: '/range', component: Range },
+    { path: '/badge', component: Badge },
     { path: '/resource', component: Resource },
     { path: '/date-format', component: DateFormat }
   ]

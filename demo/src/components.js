@@ -26,6 +26,7 @@ import UTabbarItem from 'packages/navigation/TabbarItem'
 import UProgress from 'packages/data/Progress'
 import UCellGroup from 'packages/layout/CellGroup'
 import UCell from 'packages/layout/Cell'
+import UBadge from 'packages/others/Badge'
 
 Vue.component(VFont.name, VFont)
 Vue.component(VChecker.name, VChecker)
@@ -55,3 +56,4 @@ Vue.component(UTabbarItem.name, UTabbarItem)
 Vue.component(UProgress.name, UProgress)
 Vue.component(UCellGroup.name, UCellGroup)
 Vue.component(UCell.name, UCell)
+Vue.component(UBadge.name, UBadge)
