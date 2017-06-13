@@ -20,6 +20,7 @@ import Rater from './views/Rater'
 import Badge from './views/Badge'
 import Resource from './views/Resource'
 import DateFormat from './views/DateFormat'
+import Timeline from './views/Timeline'
 import store from './store'
 Vue.use(Router)
 
@@ -58,6 +59,7 @@ const router = new Router({
     { path: '/range', component: Range },
     { path: '/rater', component: Rater },
     { path: '/badge', component: Badge },
+    { path: '/timeline', component: Timeline },
     { path: '/resource', component: Resource },
     { path: '/date-format', component: DateFormat }
   ]

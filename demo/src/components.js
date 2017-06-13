@@ -2,6 +2,8 @@ import VFont from './components/Iconfont'
 import VChecker from './components/Checker'
 import VRange from './components/Range'
 import VRater from './components/Rater'
+import VTimeline from './components/Timeline'
+import VTimelineItem from './components/TimelineItem'
 import UMask from 'packages/common/Mask'
 import USelectPopup from 'packages/common/SelectPopup'
 import ULoading from 'packages/common/Loading'
@@ -33,6 +35,8 @@ Vue.component(VFont.name, VFont)
 Vue.component(VChecker.name, VChecker)
 Vue.component(VRange.name, VRange)
 Vue.component(VRater.name, VRater)
+Vue.component(VTimeline.name, VTimeline)
+Vue.component(VTimelineItem.name, VTimelineItem)
 Vue.component(UMask.name, UMask)
 Vue.component(USelectPopup.name, USelectPopup)
 Vue.component(ULoading.name, ULoading)

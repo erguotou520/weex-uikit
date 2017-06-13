@@ -64,8 +64,10 @@
         <v-icon>&#xe674;</v-icon>
       </div>
       <div class="icon-cell">
+        <v-icon>&#xe870;</v-icon>
       </div>
       <div class="icon-cell">
+        <v-icon>&#xe86f;</v-icon>
       </div>
     </div>
   </div>
