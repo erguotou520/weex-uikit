@@ -1,0 +1,157 @@
+- 文本
+  - props
+    - color String 文本颜色值
+  - slot
+    - default 文本内容
+- iconfont
+  - props
+    - size String 字体图标大小
+    - color String 图标颜色
+  - events
+    - click 点击事件
+    - longpress 长按事件
+  - slot
+    - default 字体图标编码
+- button
+  - props
+    - type String(primary | highlight | minor) 按钮样式类型
+    - disabled Boolean 是否禁用
+  - events
+    - click 点击事件
+    - longpress 长按事件
+  - slot
+    - default 按钮里显示的文字
+- radio
+  - props
+    - value [String, Number, Boolean, Object, Array] radio绑定的值
+    - val [String, Number, Boolean, Object, Array] 当前单选项的值
+    - disabled Boolean 是否禁用
+  - events
+    - input 选择的值变更时触发，参数为当前选项的值
+    - change 选择的值变更时触发，参数为当前选项的值
+- checkbox
+  - props
+    - value Array checkbox绑定的数组
+    - val [String, Number, Boolean, Object, Array] 当前单选项的值
+    - disabled Boolean 是否禁用
+  - events
+    - input 选择的值变更时触发，参数为当前所有选中的选项的值组成的数组
+    - change 选择的值变更时触发，参数为当前所有选中的选项的值组成的数组
+- input(待优化)
+  - props
+    - type String(text, password, tel, number) 和weex中概念一致
+    - value String 和weex中概念一致
+    - placeholder 和weex中概念一致
+    - disabled Boolean 是否禁用
+  - events
+    - input 输入的值
+    - change 和weex中概念一致
+    - focus 和weex中概念一致
+    - blur 和weex中概念一致
+    - return  和weex中概念一致
+  - slot
+    - left 输入框左侧，适合放一些icon
+    - right 输入框右侧，适合放发送验证码，清除输入等
+- input-number
+  - props
+    - value Number 组件绑定的值，必传
+    - min Number 最小值
+    - max Number 最大值
+    - disabled Boolean 是否禁用
+  - events
+    - input 数字发生改变时触发
+- select(待优化)
+  目前仅单选，需要配合`SelectPopup`和`Mask`一同使用（限于weex的布局模式）
+  - props
+    - placeholder String 未选择时的placeholder
+    - value [String, Number, Boolean, Object, Array] select绑定的值
+    - data Array 下拉数据，{ lable: '', value: '' }格式，必传
+    - disabled Boolean 是否禁用
+    - renderFn option渲染函数，参考vue的render函数
+  - events
+    - input 选择的值发生改变的时候
+    - expand 展开下拉框时触发
+- SelectPopup
+  - props
+    - maskShow Boolean 是否显示了mask，必传
+  - events
+    - selected 已选择某项时触发
+    - hide-mask 需要隐藏mask时触发
+- tabs
+  - props
+    - value [String, Number, Boolean, Object, Array] 当前选中的tab
+  - events
+    - input 当前激活的tab发生变化时触发
+    - change 当前激活的tab发生变化时触发
+  - slot
+    - default 用于插入 tab
+- tab
+  - props
+    - label tab上显示的文字，必传
+    - value [String, Number, Boolean, Object, Array] 当前tab的值
+  - slot
+    - default tab中的内容
+- progress
+  - props
+    - percentage Number 进度，必传，0-100
+- cell-group
+  - props
+    - title cell的header中的文字
+  - slot
+    - default 用于插入cell
+    - left cell的header中靠左部分
+    - right cell的header中靠右部分
+- cell
+  - props
+    - text String cell左侧显示的值
+    - value [String, Number, Boolean] cell显示在右侧的值
+    - showArrow Boolean 是否显示右箭头
+  - events
+    - click 同weex
+    - longpress 同weex
+  - slot
+    - icon 显示在text左侧的图标部分
+    - right 显示在value后 arrow前的部分
+- tabbar
+  - props
+    - value String 当前tabbar的值
+    - router Boolean 是否使用路由模式，如果是，则点击item时使用item的index进行跳转，并且使用`vue-router`进行跳转，适合单页面应用
+    - imageType String(iconfont | image) 图片格式，支持iconfont image, svg模式不好处理子节点的颜色，此时可以用slot处理
+  - events
+    - input 当前激活的tabbar发生变化时触发
+    - change 当前激活的tabbar发生变化时触发
+  - slot
+    - default 用于插入tabbar-item
+- tabbar-item
+  - props
+    - label String tabbar-item显示的文字，必传
+    - index String 当前tabbar-item的索引
+    - normalUrl String 图片模式：普通状态的图片地址
+    - activeUrl String 图片模式：选中状态的图片地址
+    - fontFamily String iconfont模式：iconfont的字体family，默认值为`iconfont`
+  - events
+    - click 点击选中时触发
+  - slot
+    - normal 自定义模式：普通状态待插入部分
+    - active 自定义模式：选中状态待插入部分
+- checker
+  - props
+    - value [Boolean, Array] 绑定的值，全选按钮绑定`Array`类型，其它绑定`Boolean`类型
+  - events
+    - input 选中值发生变化时触发，全选按钮回调函数返回的是数组，其它返回的是布尔值
+    - change 同input
+- range
+  - props
+    - value Number 绑定的值，必传
+    - min Number 最小值，默认为0
+    - max Number 最大值，默认为100
+    - disabled Boolean 是否禁用
+  - events
+    - input 滑动过程中触发，回调参数为当前值
+    - change 滑动结束后触发，回调参数为当前值
+- badge
+  - props
+    - dot Boolean 是否显示小圆点
+    - count [String, Number] badge上显示的数字
+  - slot
+    - default badge里的内容

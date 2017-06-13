@@ -24,7 +24,6 @@ export default {
   },
   methods: {
     onClick () {
-      this.$emit('click')
       this.$emit('input', !this.checked)
       this.$emit('change', !this.checked)
     }

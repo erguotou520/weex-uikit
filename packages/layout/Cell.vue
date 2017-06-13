@@ -1,5 +1,7 @@
 <template>
-  <div class="cell">
+  <div class="cell"
+    @click="e=>$emit('click', e)"
+    @longpress="e=>$emit('longpress', e)">
     <div class="left">
       <slot name="icon"></slot>
       <text class="text" :style="[$slots.icon ? {'margin-left':'20px'}: {}]">{{text}}</text>
