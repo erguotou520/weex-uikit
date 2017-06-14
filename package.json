@@ -11,9 +11,11 @@
   "author": "erguotou525@gmail.com",
   "private": false,
   "scripts": {
-    "demo:dev": "node build/demo-dev.js",
-    "demo:debug": "weex-devtool -e demo/src/app.js",
-    "demo:build": "webpack --config build/demo-prod.js --progress"
+    "dev": "node build/demo-dev.js",
+    "debug": "weex-devtool -e demo/src/app.js",
+    "build-js": "webpack --config build/demo-prod.js --progress",
+    "copy": "cp demo/dist/app.weex.js platforms/android/app/src/main/assets/index.js",
+    "build:android": "npm run build-js && npm run copy"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",

@@ -8,7 +8,7 @@ before_install:
 install:
   - npm install
 script:
-  - npm run demo:build
+  - npm run build-js
   - cd demo/dist
   - git init
   - git add -A
