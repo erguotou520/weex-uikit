@@ -74,6 +74,7 @@ export default {
 .text
   margin-left 40px
   color $color-text-primary
+  font-size 32px
 .text-disabled
   color $color-text-disabled
 </style>
