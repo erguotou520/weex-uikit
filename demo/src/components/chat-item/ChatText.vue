@@ -4,7 +4,9 @@
       <div class="arrow arrow-right" :class="[name?'arrow-name':'']"></div>
       <div class="content">
         <text v-if="name" class="name">{{name}}</text>
-        <text class="text text-right"><slot></slot></text>
+        <div class="text-wrapper text-right-wrapper">
+          <text class="text text-right"><slot></slot></text>
+        </div>
       </div>
       <image class="avatar" :src="avatar"></image>
     </template>
@@ -13,7 +15,9 @@
       <div class="arrow" :style="{top:name?'71px':'44px'}" style="left:90px"></div>
       <div class="content">
         <text v-if="name" class="name">{{name}}</text>
-        <text class="text"><slot></slot></text>
+        <div class="text-wrapper">
+          <text class="text"><slot></slot></text>
+        </div>
       </div>
     </template>
   </cell>
@@ -107,7 +111,6 @@ $dialog-bg = #f1f1f8
   right 90px
   background-color $color-primary
 .content
-  flex 1
   margin-left 16px
   margin-right @margin-left
 .name
@@ -115,20 +118,23 @@ $dialog-bg = #f1f1f8
   font-size 24px
   line-height 20px
   color #ccc
-.text
+.text-wrapper
   padding-top 12px
   padding-right 20px
   padding-bottom @padding-top
   padding-left @padding-right
-  font-size 28px
-  line-height 36px
-  color #666
   background-color $dialog-bg
   border-bottom-left-radius 10px
   border-bottom-right-radius 10px
   border-top-left-radius 10px
   border-top-right-radius 10px
+.text
+  font-size 28px
+  line-height 36px
+  max-width 560px
+  color #666
+.text-right-wrapper
+  background-color $color-primary
 .text-right
   color #fff
-  background-color $color-primary
 </style>

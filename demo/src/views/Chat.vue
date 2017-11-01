@@ -1,7 +1,7 @@
 <template>
   <v-chat :height="height">
     <v-chat-text v-for="n in 20" :key="n" :right="n%6===0"
-      :name="`${n%6!==0?'user'+n:''}`" :avatar="`https://randomuser.me/api/portraits/men/${n}.jpg`">这个是特别特别长特别特别长特别特别长特别特别长特别特别长特别特别长特别特别长特别特别长特别特别长特别特别长特别特别长特别特别长特别特别长特别特别长  {{n}}</v-chat-text>
+      :name="`${n%6!==0?'user'+n:''}`" :avatar="`https://randomuser.me/api/portraits/men/${n}.jpg`">{{n%4===0?'这个是特别特别长特别特别长特别特别长特别特别长特别特别长特别特别长特别特别长特别特别长特别特别长特别特别长特别特别长特别特别长特别特别长特别特别长':'短字'}} {{n}}</v-chat-text>
   </v-chat>
 </template>
 <script>
