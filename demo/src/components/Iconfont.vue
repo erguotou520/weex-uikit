@@ -9,8 +9,8 @@ export default {
   name: 'v-icon',
   props: {
     size: {
-      type: String,
-      default: '34px'
+      type: [Number, String],
+      default: 34
     },
     color: {
       type: String,
@@ -29,7 +29,7 @@ export default {
   created () {
     domModule.addRule('fontFace', {
       'fontFamily': 'iconfont',
-      'src': "url('//at.alicdn.com/t/font_r8w53dkq0dnxko6r.ttf')"
+      'src': "url('//at.alicdn.com/t/font_309965_w2o2yxwn7undygb9.ttf')"
     })
   }
 }

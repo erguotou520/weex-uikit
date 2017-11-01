@@ -21,6 +21,7 @@ import Badge from './views/Badge'
 import Resource from './views/Resource'
 import DateFormat from './views/DateFormat'
 import Timeline from './views/Timeline'
+import Chat from './views/Chat'
 import store from './store'
 Vue.use(Router)
 
@@ -61,7 +62,8 @@ const router = new Router({
     { path: '/badge', component: Badge },
     { path: '/timeline', component: Timeline },
     { path: '/resource', component: Resource },
-    { path: '/date-format', component: DateFormat }
+    { path: '/date-format', component: DateFormat },
+    { path: '/chat', component: Chat }
   ]
 })
 

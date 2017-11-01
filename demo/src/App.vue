@@ -18,7 +18,7 @@ const modal = weex.requireModule('modal')
 export default {
   data () {
     return {
-      appHeight: weex.config.deviceHeight + 'px'
+      appHeight: this.getDeviceInfo().deviceHeight + 'px'
     }
   },
   methods: {

@@ -35,6 +35,9 @@
       <div class="grid-cell" @click="jump('/resource')"><text>远程请求(简单封装)</text></div>
       <div class="grid-cell" @click="jump('/date-format')"><text>简单的时间格式化</text></div>
     </div>
+    <div class="grid-row">
+      <div class="grid-cell" @click="jump('/chat')"><text>聊天</text></div>
+    </div>
   </div>
 </template>
 <script>

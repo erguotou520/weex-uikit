@@ -10,7 +10,7 @@
     </u-cell-group>
     <u-cell-group>
       <u-cell text="分享名片" show-arrow @click.native="share">
-        <v-icon slot="icon" color="#489cff" size="30px">&#xe712;</v-icon>
+        <v-icon slot="icon" color="#489cff" size="30">&#xe712;</v-icon>
       </u-cell>
     </u-cell-group>
   </div>
