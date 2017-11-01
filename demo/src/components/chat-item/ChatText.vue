@@ -107,6 +107,7 @@ $dialog-bg = #f1f1f8
   right 90px
   background-color $color-primary
 .content
+  flex 1
   margin-left 16px
   margin-right @margin-left
 .name
@@ -123,7 +124,10 @@ $dialog-bg = #f1f1f8
   line-height 36px
   color #666
   background-color $dialog-bg
-  border-radius 10px
+  border-bottom-left-radius 10px
+  border-bottom-right-radius 10px
+  border-top-left-radius 10px
+  border-top-right-radius 10px
 .text-right
   color #fff
   background-color $color-primary
