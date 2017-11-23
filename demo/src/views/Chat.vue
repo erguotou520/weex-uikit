@@ -6,7 +6,7 @@
 </template>
 <script>
 import ChatText from '../components/chat-item/ChatText'
-const modal = weex.requireModule('modal')
+// const modal = weex.requireModule('modal')
 export default {
   data () {
     const deviceInfo = this.getDeviceInfo()

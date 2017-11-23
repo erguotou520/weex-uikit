@@ -29,7 +29,7 @@ export default {
     avatar: String,
     name: String,
     right: Boolean
-  },
+  }
   // render (h) {
   //   // 小箭头
   //   const arrowClass = []

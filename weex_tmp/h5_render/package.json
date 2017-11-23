@@ -1,0 +1,89 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "weex-html5@^0.4.1",
+        "scope": null,
+        "escapedName": "weex-html5",
+        "name": "weex-html5",
+        "rawSpec": "^0.4.1",
+        "spec": ">=0.4.1 <0.5.0",
+        "type": "range"
+      },
+      "/Users/erguotou/.nvm/versions/node/v6.4.0/lib/node_modules/weex-toolkit"
+    ]
+  ],
+  "_cnpm_publish_time": 1476864272067,
+  "_from": "weex-html5@>=0.4.1 <0.5.0",
+  "_id": "weex-html5@0.4.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/weex-toolkit/weex-html5",
+  "_nodeVersion": "6.2.0",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/weex-html5-0.4.1.tgz_1476864271456_0.8853377662599087"
+  },
+  "_npmUser": {
+    "name": "mr.raindrop",
+    "email": "tekkahs@gmail.com"
+  },
+  "_npmVersion": "3.8.9",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "weex-html5@^0.4.1",
+    "scope": null,
+    "escapedName": "weex-html5",
+    "name": "weex-html5",
+    "rawSpec": "^0.4.1",
+    "spec": ">=0.4.1 <0.5.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/weex-toolkit"
+  ],
+  "_resolved": "https://registry.npm.taobao.org/weex-html5/download/weex-html5-0.4.1.tgz",
+  "_shasum": "85c8f820ae217ec9550c359ffe6e6757bf22db57",
+  "_shrinkwrap": null,
+  "_spec": "weex-html5@^0.4.1",
+  "_where": "/Users/erguotou/.nvm/versions/node/v6.4.0/lib/node_modules/weex-toolkit",
+  "author": {
+    "name": "mr.raindrop"
+  },
+  "bugs": {
+    "url": "https://github.com/alibaba/weex/issues"
+  },
+  "dependencies": {},
+  "description": "Weex HTML5 Renderer",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "85c8f820ae217ec9550c359ffe6e6757bf22db57",
+    "size": 1024701,
+    "noattachment": false,
+    "tarball": "http://registry.npm.taobao.org/weex-html5/download/weex-html5-0.4.1.tgz"
+  },
+  "homepage": "https://alibaba.github.io/weex",
+  "keywords": [
+    "weex",
+    "html5"
+  ],
+  "license": "Apache-2.0",
+  "main": "dist/weex.common.js",
+  "maintainers": [
+    {
+      "name": "mr.raindrop",
+      "email": "tekkahs@gmail.com"
+    }
+  ],
+  "name": "weex-html5",
+  "optionalDependencies": {},
+  "publish_time": 1476864272067,
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/alibaba/weex.git"
+  },
+  "scripts": {},
+  "version": "0.4.1"
+}
