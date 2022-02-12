@@ -42,7 +42,7 @@
   "_requiredBy": [
     "/weex-toolkit"
   ],
-  "_resolved": "https://registry.npm.taobao.org/weex-html5/download/weex-html5-0.4.1.tgz",
+  "_resolved": "https://registry.npmmirror.com/weex-html5/download/weex-html5-0.4.1.tgz",
   "_shasum": "85c8f820ae217ec9550c359ffe6e6757bf22db57",
   "_shrinkwrap": null,
   "_spec": "weex-html5@^0.4.1",
@@ -61,7 +61,7 @@
     "shasum": "85c8f820ae217ec9550c359ffe6e6757bf22db57",
     "size": 1024701,
     "noattachment": false,
-    "tarball": "http://registry.npm.taobao.org/weex-html5/download/weex-html5-0.4.1.tgz"
+    "tarball": "https://registry.npmmirror.com/weex-html5/download/weex-html5-0.4.1.tgz"
   },
   "homepage": "https://alibaba.github.io/weex",
   "keywords": [
